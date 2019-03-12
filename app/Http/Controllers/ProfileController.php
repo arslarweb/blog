@@ -22,13 +22,13 @@ class ProfileController extends Controller
             ->with("categories", $categories)
             ->with("articles", $articles);
         }else{
-            return view("profile/index");
+            return view("/users/index");
         }
     }
 
     public function changephoto($id)
     {
-    	$user = user::find($id);
+    	$user = User::find($id);
  	   	return view("profile.pic")
  	   	 	->with("users", $user);;
  	   	

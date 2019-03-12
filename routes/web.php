@@ -18,8 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 //account
 Route::group(['middleware'=>['auth']], function(){
-	Route::get('/home', 'HomeController@index')->name('home');
-	Route::get('/profile/{slug}', 'ProfileController@index');
+	//Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('/my/account/{slug}', 'ProfileController@index');
 	Route::get('/changephoto/{id}', 'ProfileController@changephoto');
 	//Route::get('/changephoto', function () {
     //return view('profile.pic');
@@ -29,14 +29,14 @@ Route::group(['middleware'=>['auth']], function(){
 	Route::get('/welcomefull', 'StaticController@fulltext');
 });
 
-Route::get('/logout', 'Auth\LoginController@logout');
+//::get('/logout', 'Auth\LoginController@logout');
 
 //admin
-Route::get('/admin', 'AccountController@index')->name('admin');
-
-Route::get('/admin/articles/add', 'Admin\AdminController@add');
-Route::post('/admin/articles/save', 'Admin\AdminController@save');
-
+Route::group(['middleware'=>['auth']], function() {
+    Route::get('/admin', 'Admin\AdminController@index')->name('admin');
+    Route::get('/admin/articles/add', 'Admin\AdminController@add');
+    Route::post('/admin/articles/save', 'Admin\AdminController@save');
+});
 
 
 

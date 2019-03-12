@@ -17,6 +17,14 @@ class AdminController extends Controller
        // return $input;
 
     //dd($articles);
+    public function index()
+    {
+        if(\Auth::user()->role == 1){
+            return view("admin/index");
+        }else{
+            echo ("sorry you do not have admin rights");
+        }
+    }
     public function add()
     {
         $categories = Category::all();

@@ -28,4 +28,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    /**
+    protected $casts = [
+        'id'                => 'integer',
+        'email'             => 'string',
+        'password'          => 'string',
+        'role'              => 'boolean',
+        'remember_token'    => 'string',
+        'created_at'        => 'datetime',
+        'updated_at'        => 'datetime',
+    ];
+
+    protected $dates = [
+        'created_at',
+        'updated_at',
+    ];
+     */
 }

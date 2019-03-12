@@ -17,10 +17,12 @@
                     Welcome to your profile!<br>
                     <img src="/img/{{ Auth::user()->pic }}" width="80px" height="80px"><br>
                     <a href="/changephoto/{id}">Change image</a>
+
                 </div>
                 <hr>
                 <div class="card-body">
                     My posts
+                    <a href="/admin">Go to admin panel</a>
                 </div>
             </div>
         </div>

@@ -32,12 +32,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        @auth
-                            <li><a href="{{url('/profile')}}/{{ Auth::user()->slug }}">Profile</a></li>
-                           
-                        @endauth
-                    </ul>
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
